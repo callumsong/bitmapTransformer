@@ -18,15 +18,26 @@ if (process.argv[2] == "headline") {
 }
 
 if (process.argv[2] == "transform") {
-for (var i = 0; i < 1023; i++) {
-  bitmap[54 + i] = Math.floor(Math.random() * 256);
-}
-for (var i = 1078; i < 11078; i++) {
-  bitmap[i] = Math.floor(Math.random() * 256);
-}
-console.dir(bitmapObject);
+  for (var i = 0; i < 1023; i++) {
+    bitmap[54 + i] = Math.floor(Math.random() * 256);
+  }
+  console.dir(bitmapObject);
 
-fs.writeFile('newTest.bmp', bitmap, 'utf-8', function (err, data){
-  console.log("Type 'open newTest.bmp' to view changed file");
-});
+  fs.writeFile('colorSmile.bmp', bitmap, 'utf-8', function (err, data){
+    console.log("Type 'open colorSmile.bmp' to view changed file");
+  });
+}
+
+if (process.argv[2] == "randomize") {
+  for (var i = 0; i < 1023; i++) {
+    bitmap[54 + i] = Math.floor(Math.random() * 256);
+  }
+  for (var i = 1078; i < 11078; i++) {
+    bitmap[i] = Math.floor(Math.random() * 256);
+  }
+  console.dir(bitmapObject);
+
+  fs.writeFile('randomize.bmp', bitmap, 'utf-8', function (err, data){
+    console.log("Type 'open randomize.bmp' to view changed file");
+  });
 }
