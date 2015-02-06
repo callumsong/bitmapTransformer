@@ -8,18 +8,25 @@ bitmap = fs.readFileSync('test.bmp');
 
 function picturesque() {
   if (process.argv[2] == "colorize") {
-    colorize.run();
-    var colorizeBitmap = fs.readFileSync('colorize.bmp');
-    readBitmap(colorizeBitmap);
+    colorize();
   } else if (process.argv[2] == "randomize") {
     randomize();
-    var randomizeBitmap = fs.readFileSync('randomize.bmp');
+  }
+}
+
+function readNewFile() {
+  var randomizeBitmap = fs.readFileSync('randomize.bmp');
+  var colorizeBitmap = fs.readFileSync('colorize.bmp');
+  if (process.argv[2] == 'colorize') {
+    readBitmap(colorizeBitmap);
+  } else if (process.argv[2] == 'randomize') {    
     readBitmap(randomizeBitmap);
-  } else {
+  }  else {
     readBitmap(bitmap);
   }
 }
 
 picturesque();
+// readNewFile();
 
 module.exports = picturesque;
