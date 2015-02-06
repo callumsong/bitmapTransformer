@@ -15,11 +15,11 @@ function picturesque() {
 }
 
 function readNewFile() {
-  var randomizeBitmap = fs.readFileSync('randomize.bmp');
-  var colorizeBitmap = fs.readFileSync('colorize.bmp');
   if (process.argv[2] == 'colorize') {
+    var colorizeBitmap = fs.readFileSync('colorize.bmp');
     readBitmap(colorizeBitmap);
   } else if (process.argv[2] == 'randomize') {    
+    var randomizeBitmap = fs.readFileSync('randomize.bmp');
     readBitmap(randomizeBitmap);
   }  else {
     readBitmap(bitmap);
