@@ -16,17 +16,20 @@ function picturesque() {
 
 function readNewFile() {
   if (process.argv[2] == 'colorize') {
-    var colorizeBitmap = fs.readFileSync('colorize.bmp');
-    readBitmap(colorizeBitmap);
-  } else if (process.argv[2] == 'randomize') {    
-    var randomizeBitmap = fs.readFileSync('randomize.bmp');
-    readBitmap(randomizeBitmap);
+    var colorizeBitmap = fs.readFileSync('./colorize.bmp');
+    console.log(colorizeBitmap);
+    // readBitmap(colorizeBitmap);
+  } else if (process.argv[2] == 'randomize') {
+    var randomizeBitmap = fs.readFileSync('./randomize.bmp');
+    console.log(randomizeBitmap);
+    // readBitmap(randomizeBitmap);
   }  else {
+    console.log(bitmap);
     readBitmap(bitmap);
   }
 }
 
 picturesque();
-// readNewFile();
+readNewFile();
 
 module.exports = picturesque;
