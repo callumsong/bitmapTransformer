@@ -27,10 +27,10 @@ module.exports = function(grunt) {
     jscs: {
       all: {
         options: {
-          'standard':'Jquery'
+          'preset':'google'
         },
         files: {
-          src: ['Gruntfile.js', 'bitmap_transformer.js', 'test/transformer_test.js']
+          src: ['Gruntfile.js']
         }
       }
     }
